@@ -139,7 +139,7 @@ ____________________________________________________
   Observable<T> observableZip = Observable.zip(
                 // Observable 발행1,
                 // Observable 발행1,
-                new BiFunction<Object, Object, String>() {
+                new BiFunction<Object, Object, T>() {
                     @Override
                     public T apply(Object o, Object o2) throws Exception {
                         return 반환할 값;
@@ -178,9 +178,9 @@ ____________________________________________________
   ```java
   // Observable객체 생성
   Observable<T> observable = Observer.create(/*생략*/);
-  observable.filter(new Predicate<String>() {
+  observable.filter(new Predicate<T>() {
                     @Override
-                    public boolean test(String str) throws Exception {
+                    public boolean test(T str) throws Exception {
                         return 데이터 검증 구역;
                     }
                 })
@@ -195,9 +195,9 @@ ____________________________________________________
   ```java
   // Observable객체 생성
   Observable<T> observable = Observer.create(/*생략*/);
-  observable.map(new Function<String, Object>() {
+  observable.map(new Function<T, Object>() {
                     @Override
-                    public Object apply(String s) throws Exception {
+                    public Object apply(T  s) throws Exception {
                         return 데이터 가공 구역;
                     }
                 })
@@ -214,9 +214,9 @@ ____________________________________________________
   ```java
   // Observable객체 생성
   Observable<T> observable = Observer.create(/*생략*/);
-  observable.flatMap(new Function<String, ObservableSource<?>>() {
+  observable.flatMap(new Function<T, ObservableSource<?>>() {
               @Override
-              public ObservableSource<?> apply(String s) throws Exception {
+              public ObservableSource<?> apply(T s) throws Exception {
                   return 데이터를 여러개로 가공하여 생성하는 구역;
               }
           })
