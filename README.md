@@ -126,7 +126,7 @@ ____________________________________________________
 
   2. Consumer 가 아이템(데이터)을 사용
 
-##### __Observable 기능__
+##### __Observable TRANSFORMATION__
 
 - Observable.zip
 
