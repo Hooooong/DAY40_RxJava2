@@ -120,7 +120,7 @@ ____________________________________________________
 
 - RxJava 의 흐름
 
-  ![RxJava]()
+  ![RxJava](https://github.com/Hooooong/DAY40_RxJava2/blob/master/image/RxJava%ED%9D%90%EB%A6%84%EB%8F%84.png)
 
   1. Emitter 가 아이템(데이터)을 발행
 
@@ -167,10 +167,11 @@ ____________________________________________________
 
   // return ObservableSource
   ```
+##### __Observable FILTERING__
 
-- Observable객체.filter
+- Observable.filter
 
-  - `Observable 객체.filter()` 는 데이터를 구별하기 위해 사용된다.
+  - `Observable.filter()` 는 데이터를 구별하기 위해 사용된다.
 
   - 데이터를 검증하여 일부 데이터만 사용하거나, 사용하지 않을 수 있다.
 
@@ -187,9 +188,9 @@ ____________________________________________________
   observable.filter(str -> 데이터 검증 구역);
   ```
 
-- Observable객체.map
+- Observable.map
 
-  - `Observable객체.map()` 은 데이터를 가공하기 위해 사용된다.
+  - `Observable.map()` 은 데이터를 가공하기 위해 사용된다.
 
   ```java
   // Observable객체 생성
@@ -204,7 +205,7 @@ ____________________________________________________
   observable.map(str -> 데이터 가공 구역)
   ```
 
-- Observable객체.flatMap
+- Observable.flatMap
 
   - `Observable객체.flatMap()` 은 데이터를 여러개로 가공하기 위해 사용된다.
 
@@ -222,3 +223,5 @@ ____________________________________________________
   //Lambda 작성
   observable.flatMap(item -> 데이터를 여러개로 가공하여 생성하는 구역)
   ```
+
+- 참조 : [RxJava](https://github.com/Hooooong/DAY40_RxJava2/blob/master/pdf/RxJava.pdf), [RxJava Marbles](http://rxmarbles.com/), [RxJava pdf](https://github.com/Hooooong/DAY40_RxJava2/blob/master/pdf/RxJava.pdf)
