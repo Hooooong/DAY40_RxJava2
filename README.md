@@ -167,6 +167,23 @@ ____________________________________________________
 
   // return ObservableSource
   ```
+
+- Observale.combineLatest
+
+  - `Observale.combineLatest()` 는 en Observale 의 각각의 이벤트가 발생할 때 각 이벤트의 마지막 이벤트들을 묶어서 전달한다.
+
+  ```java
+  Observable<TextViewTextChangeEvent> idEmitter = RxTextView.textChangeEvents(editId);
+  Observable<TextViewTextChangeEvent> pwEmitter = RxTextView.textChangeEvents(editPassword);
+  // 조건 ID 가 5자 이상이고, PW 가 8자 이상이면 btnSignIn 의 enable 이 true 로 변경
+
+  Observable.combineLatest(
+          idEmitter,
+          pwEmitter,
+          (item1, item2) -> item1.text().length() >= 6 && item2.text().length() >= 8)
+          .subscribe(flag -> findViewById(R.id.btnSignIn).setEnabled(flag) );
+  ```
+
 ##### __Observable FILTERING__
 
 - Observable.filter
