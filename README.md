@@ -224,7 +224,7 @@ ____________________________________________________
 
 - Observable.flatMap
 
-  - `Observable객체.flatMap()` 은 데이터를 여러개로 가공하기 위해 사용된다.
+  - `Observable객체.flatMap()` 은 데이터를 새로운 `Observale` 로 생성한다.
 
   - 반환값은 `ObservableSource` 이다.
 
